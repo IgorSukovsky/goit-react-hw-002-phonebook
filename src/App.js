@@ -45,23 +45,6 @@ class Contacts extends Component {
     });
   };
 
-  // =========================
-  componentDidMount() {
-    console.log("[componentDidMount]");
-    const items = localStorage.getItem("items");
-    if (items) {
-      const parsedItems = JSON.parse(items);
-      this.setState({ items: parsedItems });
-    }
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    console.log("[componentDidUpdate]");
-    if (prevState.items !== this.state.items) {
-      localStorage.setItem("items", JSON.stringify(this.state.items));
-    }
-  }
-
   render() {
     const { items, filter } = this.state;
     const formattedFilter = filter.toLowerCase().trim();
