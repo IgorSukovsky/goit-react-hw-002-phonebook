@@ -26,7 +26,7 @@ class Contacts extends Component {
     }
 
     const isDuplicate = this.state.items.some(
-      (item) => item.name === term.name
+      (item) => item.name.toLowerCase() === term.name.toLowerCase()
     );
     if (isDuplicate) {
       alert("Контакт: " + term.name + " уже существует ");
